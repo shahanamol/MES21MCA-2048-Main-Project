@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "lab_home.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+            <h1 align="center">LAB RESULT</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>LAB ID</th>  
+                            <th>REQUEST ID</th>  
+                            <th>OPTICKET</th>  
+                            <th>DOCTOR ID</th>  
+                            <th>TREATMENT ID</th>  
+                            <th>TEST NAME</th>  
+                            <th>RESULT</th>  
+                            <th></th>
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.lab_id }}</td>  
+                            <td>{{i.lab_test_request_id}}</td> 
+                            <td>{{i.opticket_id }}</td>  
+                            <td>{{i.doctor_id}}</td> 
+                            <td>{{i.treatment_id }}</td>  
+                            <td>{{i.test_name}}</td> 
+                            <td>{{i.lab_result}}</td> 
+                          
+                            <td><a href="/labresultview2/{{ i.id }}">REMOVE</span></a><br>
+                            <a href="/labresultedit/{{ i.id }}">EDIT</span></a> </td>
+                         </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

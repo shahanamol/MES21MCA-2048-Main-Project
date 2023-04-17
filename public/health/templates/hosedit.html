@@ -1,0 +1,79 @@
+<html>
+    <head>
+            <script type="text/javascript">
+                function check()
+                {
+                  
+                         alert("Updated Successfully.....");
+                        
+        
+        
+                }
+            </script>
+            {%load static%}
+       <div class="basic">
+            {% include "hdep1.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Hospital Registration</h5>
+
+                        <form action="/hosupdate/{{hs.id}}" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="category" id="appointmentName" placeholder="Name" value="{{hs.category_id}}"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="name" id="appointmentName" placeholder="Name" value="{{hs.hos_name}}"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="address" id="hosaddress" placeholder="Address" value="{{hs.hos_address}}"  required>{{hs.hos_address}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="number" id="HosNumber" placeholder="Phone" value="{{hs.hos_phone}}"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" id="HosEmail" placeholder="E-mail" value="{{hs.hos_email}}"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="local_body" id="HosLocalBody" placeholder="Local Body" value="{{hs.hos_local_body}}"  required>
+                                        </div>
+                                    </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="hosupdate"  onClick="return check()">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

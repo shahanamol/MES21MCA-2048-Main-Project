@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "public.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+        <h1 align="center">NOTIFICATIONS</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>NOTIFICATION</th> 
+                             
+                            <th> DATE</th>
+                            <th></th>  
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.notification }}</td> 
+                            <td>{{i.noti_date}}</td> 
+                            <td>{{i.noti_status }}</td>                          
+                                
+                         </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

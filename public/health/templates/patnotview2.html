@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "patient1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+</head>
+    <body>
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td>NOTIFICATION:</td>
+                    <td>{{hs.notification}}</td>
+                </tr>
+                <tr>
+                    <td> DATE</td>
+                    <td>{{hs.noti_date}}</td>
+                </tr>
+                    
+                  
+                </table>
+                    </body>
+                    </html>

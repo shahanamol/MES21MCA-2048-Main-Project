@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function check()
+            {
+              
+                var a= f.select5.value;
+                var c= f.select4.value;
+    
+                if(a==0 ||c==0 )
+                {
+                    alert("Please complete the field");
+                    return false;
+                }
+                    
+    return true;
+    
+            }
+        </script>
+            {%load static%}
+       <div class="basic">
+            {% include "dr_home1.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Lab Test Request</h5>
+
+                        <form action="/addlabreqmc/" method="post" name="f">
+                            {% csrf_token %}
+                            <div class="row">
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <select class="form-control" id="lab" name="select5" >
+                                                    <option value="0">Lab Id</option>
+                                                    {% for m in ob4 %}
+                                                    <option value="{{m.id}}">{{m.id}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="select1" id="hospital" value="{{ob}}">
+                        
+                                            </div>
+                                        </div>
+                            
+                                <!-- <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <select class="form-control" id="patient" name="select2">
+                                            <option value="0">Op Ticket</option>
+                                            {% for j in ob1 %}
+                                            <option value="{{j.id}}">{{j.id}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="select3" id="doctor" value="{{ob2}}">
+                
+                                    </div>
+                                </div>
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <select class="form-control" id="treatment" name="select4" >
+                                                    <option value="0">Treatmeni Id</option>
+                                                    {% for l in ob3 %}
+                                                    <option value="{{l.id}}">{{l.id}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                <input type="text" class="form-control" name="testname" id="testname" placeholder="Test Name" required>
+                                                 </div>
+                                                   </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="labrequest"  onClick="return check()">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

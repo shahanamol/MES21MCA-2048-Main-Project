@@ -1,0 +1,75 @@
+<html>
+    <head>
+            <script type="text/javascript">
+                function check()
+                {
+                  
+                    var a= f.select.value;
+        
+                    if(a==0)
+                    {
+                        alert("Please choose a category");
+                        return false;
+                    }
+                        
+        return true;
+        
+                }
+            </script>
+        <title>
+            hospital category
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+                <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="medica-appointment-card">
+                            <h5>Category Registration</h5>
+    </head>
+                            <form action="/save/" method="post" name="f">
+                                {% csrf_token %}
+                                <div class="row">
+                                    
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            <select class="form-control"  name="select" id="category">
+                                                <option value="0">Select_Option</option>
+                                                <option value="Primary_Health_Centre">Primary_Health_Centre</option>
+                                                <option value="District_Hospitals">District_Hospitals</option>
+                                                <option value="Medical_Collage">Medical_Collage</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="description" id="Regaddress" placeholder="Description"  required></textarea>
+                                            </div>
+                                        </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn medica-btn mt-15" value="save"  onClick="return check()">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div class="col-12 col-lg-6">
+                        <div class="medica-appointment-thumb">
+                            <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Appointment Area End ***** -->
+    </body>
+    </html>        
+        
+
+     

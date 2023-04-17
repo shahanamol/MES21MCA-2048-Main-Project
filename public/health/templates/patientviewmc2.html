@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "dr_home1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+</head>
+    <body>
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td> HOSPITAL ID:</td>
+                    <td>{{hs.hospital_id}}</td>
+                </tr>
+                <tr>
+                    <td> NAME:</td>
+                    <td>{{hs.pat_name}}</td>
+                </tr>
+                <tr>
+                        <td>ADDRESS:</td>
+                        <td>{{hs.pat_address}}
+                        </td>
+                        <tr>
+                    <tr>
+                        <td> GENDER:</td>
+                        <td>{{hs.pat_gender}}</td>
+                    </tr>
+                    <tr>
+                        <td> EMAIL:</td>
+                        <td>{{hs.pat_email}}</td>
+                    </tr>
+                        <td> PHONE:</td>
+                        <td>{{hs.pat_phone}}</td>
+                    </tr>
+                    <tr>
+                        <td> DOB:</td>
+                        <td>{{hs.pat_dob}}</td>
+                    </tr>
+                    <tr>
+                            <td>PHOTO:</td>
+                            <td><img src="{{hs.pat_photo}}"  alt="image" height="100px" width="100px"></td>
+                    </tr>
+                    <tr>
+
+                    
+                        <td><a href="/treatmentmc/">TREATMENT</span></a>  </td>
+                         </tr>
+                </table>
+                    </body>
+                    </html>

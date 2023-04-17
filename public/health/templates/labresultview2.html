@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "lab_home.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+</head>
+    <body>
+            <h1 align="center">LAB RESULT</h1>
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td> LAB ID:</td>
+                    <td>{{hs.lab_id}}</td>
+                </tr>
+                <tr>
+                        <td> REQUEST ID:</td>
+                        <td>{{hs.lab_test_request_id}}</td>
+                    </tr>
+                   
+                    <tr>
+                        <td> PATIENT ID:</td>
+                        <td>{{hs.patient_id}}</td>
+                    </tr>
+                    <tr>
+                        <td> DOCTOR ID:</td>
+                        <td>{{hs.doctor_id}}</td>
+                    </tr>
+                    <tr>
+                        <td> TREATMENT ID:</td>
+                        <td>{{hs.treatment_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>TEST NAME ID :</td>
+                        <td>{{hs.test_name_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>RESULT:</td>
+                        <td>{{hs.lab_result}}
+                        </td>
+                        <tr>
+
+                    
+                   <td><a href="/labresultremove/{{ hs.id }}">REMOVE</span></a>  </td>
+                    </tr>
+                </table>
+                    </body>
+                    </html>

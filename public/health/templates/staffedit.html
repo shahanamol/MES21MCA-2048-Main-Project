@@ -1,0 +1,82 @@
+<html>
+    <head>
+            {%load static%}
+       <div class="basic">
+            {% include "hdep1.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Staff Registration</h5>
+                            <form method="post" enctype="multipart/form-data" action="/staffupdate/{{hs.id}}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="category" id="appointmentName" placeholder="category" value="{{hs.category_id}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="hospital" id="appointmentName" placeholder="hospital" value="{{hs.hospital_id}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="role" id="appointmentName" placeholder="Role" value="{{hs.staff_role}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="specialization" id="Specialization" placeholder="Specialization" value="{{hs.staff_specialization}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="name" id="StaffName" placeholder="Name" value="{{hs.staff_name}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="address" id="Staffaddress" placeholder="Address">{{hs.staff_address}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="number" id="StaffNumber" placeholder="Phone" value="{{hs.staff_phone}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" id="StaffEmail" placeholder="E-mail" value="{{hs.staff_email}}">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="file" class="form-control" name="photo"  value="{{hs.staff_photo}}">
+                                    </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="update">UPDATE</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

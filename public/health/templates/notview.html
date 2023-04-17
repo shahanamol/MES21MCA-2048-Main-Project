@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+        <h1 align="center">NOTIFICATIONS</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>NOTIFICATION</th> 
+                             
+                            <th> DATE</th>
+                            <th> STATUS</th>
+                            <th></th>  
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.notification }}</td> 
+                            <td>{{i.noti_date}}</td> 
+                            <td>{{i.noti_status }}</td>                          
+                                <td><a href="/notview2/{{ i.id }}">REMOVE</span></a><br>
+                                     </td> </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

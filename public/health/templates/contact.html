@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>
+            Contact
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "public.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+
+<body>
+
+    <section class="breadcumb-area bg-img gradient-background-overlay">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-content">
+                        <!-- Title -->
+                        <h3 class="breadcumb-title">Contact</h3>
+                        <!-- Breadcumb -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="medica-contact-area section_padding_100">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Form Area -->
+                    <div class="col-12 col-lg-8">
+                        <div class="contact-form">
+                            <h5 class="mb-50">Get in touch</h5>
+    
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn medica-btn btn-3 mt-3">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                   
+                <div class="col-12 col-lg-4">
+                        <div class="content-sidebar">
+                            <!-- Medica Emergency Card -->
+                            <div class="medica-emergency-card mb-4">
+                                <h5>Fax</h5>
+                                <h4>04712303025 / 04712303080</h4>
+                            </div>
+                            <!-- Medica Appointment Card -->
+                            <div class="medica-contact-card">
+                                <h5>Useful Information</h5>
+                                <div class="mt-50"></div>
+                                <div class="single-contact-info d-flex align-items-center">
+                                    <div class="contact-icon mr-30">
+                                        <img src="{% static 'img/icons/alarm-clock.png' %}" alt="">
+                                    </div>
+                                    <div class="contact-meta">
+                                        <p>24/7 service</p>
+                                    </div>
+                                </div>
+                                <div class="single-contact-info d-flex align-items-center">
+                                    <div class="contact-icon mr-30">
+                                        <img src="{% static 'img/icons/envelope.png' %}" alt="">
+                                    </div>
+                                    <div class="contact-meta">
+                                        <p>04712302490 |  dhskerala@gmail.com <br> dhskerala.hlth@kerala.gov.in</p>
+                                    </div>
+                                </div>
+                                <div class="single-contact-info d-flex align-items-center">
+                                    <div class="contact-icon mr-30">
+                                        <img src="{% static 'img/icons/map-pin.png' %}" alt="">
+                                    </div>
+                                    <div class="contact-meta">
+                                        <p>Directorate of Health Services,
+                                            General Hospital Junction,
+                                            Thiruvananthapuram - 695 035</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+     <!-- jQuery (Necessary for All JavaScript Plugins) -->
+     <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+     <!-- Popper js -->
+     <script src="{% static 'js/popper.min.js' %}"></script>
+     <!-- Bootstrap js -->
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <!-- Plugins js -->
+     <script src="{% static 'js/plugins.js' %}"></script>
+     <!-- Active js -->
+     <script src="{% static 'js/active.js' %}"></script>
+    <!-- Google Maps -->
+    <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s' %}"></script>
+    <script src="{% static 'js/map-active.js' %}"></script>
+
+</body>
+
+</html>

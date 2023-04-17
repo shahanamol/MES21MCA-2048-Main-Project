@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+</head>
+    <body>
+            <!-- <form action="/remove/{{hs.id}" method="POST">-->
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td> CATEGORY NAME:</td>
+                    <td>{{hs.category_name}}</td>
+                </tr>
+                <tr>
+                    <td>DESCRIPTION:</td>
+                    <td>{{hs.description}}
+                    </td><br>
+                    <!--<td><input type="submit" value="remove"></td>-->
+                   <td><a href="/remove/{{ hs.id }}">REMOVE</span></a>  </td>
+                    </tr>
+                </table>
+                    </body>
+                    </html>

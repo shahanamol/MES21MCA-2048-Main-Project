@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "doctorhome1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+            <h1 align="center"> REFERRAL PATIENTS</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>PATIENT ID</th>  
+                            <th>HOSPITAL ID</th>  
+                            <th>REFERRED HOSPITAL</th>  
+                            <th>DOCTOR ID</th>  
+                            <th>DOCTOR VIEWS</th>  
+                            <th>REFERRAL DATE</th>
+                            <th></th>
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.patient_id }}</td>  
+                            <td>{{i.hospital_id}}</td> 
+                            <td>{{i.referred_hos_id}}</td>  
+                            <td>{{i.doctor_id}}</td> 
+                            <td>{{i.doctor_views}}</td>  
+                            <td>{{i.ref_date}}</td>
+                            <td><a href="/referralview2/{{ i.id }}">VIEW</span></a>
+                            </td>
+                         </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

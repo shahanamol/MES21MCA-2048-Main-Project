@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function check()
+            {
+              
+                var a= f.select.value;
+                var b= f.select1.value;
+                var a1=parseInt(f.number.value.length);
+    
+                if(b==0 || a==0)
+                {
+                    alert("Please complete the field");
+                    return false;
+                }
+                    
+    // return true;
+
+            if(a1!=10 && a1!=11) 
+                {
+                    alert("phone number should be valid");
+                    return false;
+                }
+                return true;
+                
+    
+            }
+        </script>
+            {%load static%}
+       <div class="basic">
+            {% include "hdep1.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Lab Registration</h5>
+
+                        <form action="/addlab/" method="post" name="f">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <select class="form-control" id="category" name="select1">
+                                            <option  value="0">Select Category</option>
+                                            {% for j in ob1 %}
+                                            <option value="{{j.id}}">{{j.category_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <select class="form-control" id="category" name="select">
+                                            <option  value="0">Select Hospital</option>
+                                            {% for i in ob %}
+                                            <option value="{{i.id}}">{{i.hos_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                    <input type="text" class="form-control" name="number" id="LabNumber" placeholder="Phone"  required>
+                                     </div>
+                                       </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="add"  onClick="return check()">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

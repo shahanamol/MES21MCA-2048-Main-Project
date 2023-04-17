@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "dr_home1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+            <h1 align="center">PATIENTS</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>HOSPITAL ID</th>  
+                            <th>NAME</th>  
+                            <th>ADDRESS</th>  
+                            <th>GENDER</th>  
+                            <th>EMAIL</th>  
+                            <th>PHONE</th>  
+                            <th>DATE OF BIRTH</th> 
+                            <th>PHOTO</th>  
+                            <th></th>
+                            
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.hospital_id }}</td>  
+                            <td>{{i.pat_name}}</td> 
+                            <td>{{i.pat_address }}</td>  
+                            <td>{{i.pat_gender}}</td> 
+                            <td>{{i.pat_email}}</td>  
+                            <td>{{i.pat_phone}}</td> 
+                            <td>{{i.pat_dob}}</td> 
+                            <td><img src="{{i.pat_photo}}"  alt="image" height="100px" width="100px"></td>
+                          
+                            <td><a href="/patientviewmc2/{{ i.id }}">VIEW</span></a>
+                              
+                            </td>
+                         </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

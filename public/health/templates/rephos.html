@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+            <h1 align="center">HOSPITAL MANAGEMENT</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                                <th>HOSPITAL ID</th>
+                            <th>CATEGORY ID</th>  
+                            <th>HOSPITAL NAME</th>  
+                            <th>HOSPITAL ADDRESS</th>  
+                            <th>EMAIL</th>  
+                            <th>PHONE</th>  
+                            <th>LOCAL BODY</th>  
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                                <td>{{i.id }}</td>  
+                            <td>{{i.category_id }}</td>  
+                            <td>{{i.hos_name}}</td> 
+                            <td>{{i.hos_address }}</td>  
+                            <td>{{i.hos_email}}</td> 
+                            <td>{{i.hos_phone }}</td>  
+                            <td>{{i.hos_local_body}}</td> 
+                         </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    

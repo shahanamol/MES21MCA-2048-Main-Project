@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function msg()
+            {
+                var a1=parseInt(f2.number.value.length);
+                var c= f2.gender.value;
+                if(c==0)
+            {
+                alert("Please complete the field");
+                return false;
+            }
+                if(a1!=10)
+                {
+                    alert("phone number should be a 10 digit number");
+                    return false;
+                }
+                return true;
+                
+            
+                   
+                
+            }
+        </script>
+            {%load static%}
+        <div class="basic">
+            {% include "staff_home.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Patient Registration</h5>
+
+                        <form method="post" enctype="multipart/form-data" action="/addpat/" name="f2">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-white" name="select" id="hospital" value={{ob}}>
+                                  
+                                    </div>
+                                </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control text-white" name="name" id="PatName" placeholder="Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="address" id="Pataddress" placeholder="Address" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                    <select class="form-control" id="gender" name="gender">
+                                                        <option value="0">Gender</option>
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" id="PatEmail" placeholder="E-mail"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                    <input type="text" class="form-control" name="number" id="PatNumber" placeholder="Phone"  required>
+                                     </div>
+                                       </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <input type="date" class="form-control" name="date" id="date" placeholder="Date Of Birth"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="age" id="age" placeholder="Age"  required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="file" class="form-control" name="photo">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="regpat"  onClick="return msg()">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

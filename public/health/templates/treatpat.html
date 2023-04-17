@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "dr_home1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+</head>
+    <body>
+        <form action="/addtreatmc/" method="post">
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td> PATINET NAME:</td>
+                    <td>{{hs.pat_name}}</td>
+                </tr>
+                <tr>
+                    <td> PATIENT AGE:</td>
+                    <td>{{hs.pat_age}}</td>
+                </tr>
+                <tr>
+                        <td> SEX</td>
+                        <td>{{hs.pat_gender}}</td>
+                    </tr>
+                    <tr>
+                        <td> OP TICKET ID</td>
+                        <td><input type="text" name="select4" value="{{hsss.id}}"></td>
+                    </tr>
+                    <tr>
+                        <td> HOSPITAL ID</td>
+                        <td><input type="text" name="select1" value="{{ob}}"></td>
+                    </tr>
+                    <tr>
+                        <td> DOCTOR ID</td>
+                        <td><input type="text" name="select3" value="{{ob2}}"></td>
+                    </tr>
+                </table>
+               
+                <table><br><br>
+                        <h1 align="center">REFERRAL</h1>
+                        <!-- <tr>
+                            <td> DOCTOR DIAGNOSIS:</td>
+                            <td><input type="text" name="dia" value="{{b}}"></td>
+                        </tr>
+                        <tr>
+                            <td> MEDICINES SUGGESTED:</td>
+                            <td><input type="text" name="med" value="{{a}}"></td>
+                        </tr>
+                    <tr> -->
+                        <td> DOCTOR VIEWS:</td>
+                        <td>{{hss1}}</td>
+                    </tr>
+                    <tr>
+                        <td> REFERRAL DATE:</td>
+                        <td>{{hss2}}</td>
+                    </tr>
+                    <tr>
+                            <td> DIAGNOSIS:</td>
+                            <td><textarea name="diagnosis" id="diagnosis" placeholder="Diagnosis" required></textarea>
+                        </tr>
+                        <tr>
+                             <td> <div class="col-12">
+                                <button type="submit" class="btn medica-btn mt-15" value="Add" >Add</button>
+                            </div>
+                        </div></td>
+                        </tr>
+                    </table>
+                    </body>
+                    </html>

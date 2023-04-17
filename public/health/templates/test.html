@@ -1,0 +1,114 @@
+for i in info:
+                        if un==i.username and pwd==i.password:
+                                type=i.category
+                                flag=1
+                                if type=="admin":
+                                        return redirect('/hdep')               
+                                elif type=="patient":
+                                        return redirect('/patient')      
+                                elif type=="office":
+                                        return redirect('/staffhome')
+                                elif type=="doctor":
+                                        st=tbl_staff.objects.get(staff_email=un)
+                                        hid=st.category_id
+                                        hcat=tbl_hos_cat.objects.get(id=hid)
+                                        cat=hcat.category_name
+                                        if cat=="Primary_Health_Centre":
+                                                return redirect('/doctorhome')  
+                                        else:        
+                                                return redirect('/doctorhome1')
+                                elif type=="lab":
+                                        return redirect('/labhome')   
+                                
+                                else:
+                                        return HttpResponse("invalid acct type")
+                if flag==0:
+                        return HttpResponse("user not exist")        
+
+
+
+                        if un==i.username and pwd==i.password:
+                        type=i.category
+                        flag=1
+                        if type=="admin":
+                                return redirect('/hdep')               
+                        elif type=="patient":
+                                return redirect('/patient')      
+                        st=tbl_staff.objects.get(staff_email=un)
+                        sid=st.id
+                        hid=st.hospital_id
+                        hos=tbl_hos_man.objects.get(id=hid)
+                        catid=hos.category_id
+                        hcat=tbl_hos_cat.objects.get(id=catid)
+                        cat=hcat.category_name
+                        request.session['sid']=sid
+                        request.session['hid']=hid
+                        request.session['cat']=cat
+                        print("kk")
+                        print(cat)
+                        print(type)
+                        if type=="office":
+                                return redirect('/staffhome')
+                        elif type=="doctor"and cat=="Primary_Health_Center":
+                                return redirect('/doctorhome')  
+                        elif type=="doctor"and cat=="District_Hospital":
+                                return redirect('/doctorhome')  
+                        elif type=="lab":
+                                return redirect('/labhome')   
+                        elif type=="doctor" and cat=="Medical_Collage":
+                                print("jh")
+                                return redirect('/doctorhome1')
+                        
+                        else:
+                                return HttpResponse("invalid acct type")
+
+
+
+
+
+                                for i in info:
+                                if un==i.username and pwd==i.password:
+                                        type=i.category
+                                        flag=1
+                                        if type=="admin":
+                                                return redirect('/hdep')     
+                                        elif type=="patient":
+                                                return redirect('/patient')               
+                                        elif type=="doctor":
+                                                st=tbl_staff.objects.get(staff_email=un)
+                                                hid=st.category_id
+                                                hcat=tbl_hos_cat.objects.get(id=hid)
+                                                cat=hcat.category_name
+                                                request.session['sid']=sid
+                                                request.session['hid']=hid
+                                                request.session['cat']=cat
+                                                print("podaaa")
+                                                if cat=="Medical_Collage":
+                                                        return redirect('/doctorhome1')  
+                                                else:        
+                                                        return redirect('/doctorhome')
+                                        elif type=="lab":
+                                                st=tbl_staff.objects.get(staff_email=un)
+                                                hid=st.category_id
+                                                hcat=tbl_hos_cat.objects.get(id=hid)
+                                                cat=hcat.category_name
+                                                request.session['sid']=sid
+                                                request.session['hid']=hid
+                                                request.session['cat']=cat
+                                                print("daaa")
+                                                return redirect('/labhome') 
+                                        
+                                        elif type=="office":
+                                                st=tbl_staff.objects.get(staff_email=un)
+                                                hid=st.category_id
+                                                hcat=tbl_hos_cat.objects.get(id=hid)
+                                                cat=hcat.category_name
+                                                request.session['sid']=sid
+                                                request.session['hid']=hid
+                                                request.session['cat']=cat
+                                                return redirect('/staffhome')  
+                                        
+                                        else:
+                                                return HttpResponse("invalid acct type")
+                        if flag==0:
+                                return HttpResponse("user not exist")        

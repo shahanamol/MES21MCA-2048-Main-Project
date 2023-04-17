@@ -1,0 +1,58 @@
+<html>
+    <head>
+            <script type="text/javascript">
+                function check()
+                {
+                  
+                         alert("Notification Added.....");
+                        
+        
+        
+                }
+            </script>
+        <title>
+            hospital category
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+                <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="medica-appointment-card">
+                            <h5>Notification</h5>
+    
+                            <form action="/addnot/" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="notification" id="notification" placeholder="Notification"  required></textarea>
+                                            </div>
+                                        </div>
+                                       
+                                    <div class="col-12">
+                                        <button type="submit" class="btn medica-btn mt-15" value="save"  onClick="return check()">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div class="col-12 col-lg-6">
+                        <div class="medica-appointment-thumb">
+                            <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Appointment Area End ***** -->
+    </body>
+    </html>        
+        
+
+     

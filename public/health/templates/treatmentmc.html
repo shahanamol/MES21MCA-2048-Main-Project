@@ -1,0 +1,85 @@
+<html>
+    <head>
+            <script type="text/javascript">
+                function check()
+                {
+                  
+                    var a= f.select4.value;
+                  
+        
+                    if(a==0)
+                    {
+                        alert("Please select opticket id");
+                        return false;
+                    }
+                        
+                    return true;
+        
+                }
+            </script>
+            {%load static%}
+       <div class="basic">
+            {% include "dr_home1.html" %}
+        </div>
+    </head>
+    <body>
+    
+        <!-- ***** Appointment Area Start ***** -->
+    <section class="medica-book-an-appointment-area section_padding_100_0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-card">
+                        <h5>Treatment</h5>
+
+                        <form action="/treatpat/" method="post" name="f">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="select1" id="hospital" value="{{ob}}">
+                
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="select3" id="doctor" value="{{ob2}}">
+                
+                                    </div>
+                                </div>
+                                    <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <select class="form-control" id="opticket" name="select4">
+                                                    <option value="0">OP Ticket</option>
+                                                    {% for l in ob3 %}
+                                                    <option value="{{l.id}}">{{l.id}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                   <!-- <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                    <textarea class="form-control" name="diagnosis" id="diagnosis" placeholder="Diagnosis"></textarea>
+                                                </div>
+                                            </div>-->
+                                <div class="col-12">
+                                    <button type="submit" class="btn medica-btn mt-15" value="Patient" onClick="return check()">View Patient</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="medica-appointment-thumb">
+                        <img src="{% static 'img/bg-img/medical1.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Appointment Area End ***** -->
+</body>
+</html>        

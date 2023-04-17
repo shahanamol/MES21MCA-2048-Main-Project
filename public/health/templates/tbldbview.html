@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        {%load static%}
+        <div class="basic">
+                {% include "hdep1.html" %}
+            </div>
+<link href="{% static 'css/style2.css' %}" rel="stylesheet">
+	<style type="text/css">
+	
+	</style>
+    </head>
+    <body>
+        <h1 align="center">HOSPITAL CATEGORY</h1>
+        <table>
+                <thead >  
+                        <tr>  
+                            <th>CATEGORY NAME</th>  
+                            <th>DESCRIPTION</th>
+                            <th></th> 
+                        </tr>  
+                </thead>  
+                <tbody>  
+                        {% for i in hs %}  
+                        <tr>  
+                            <td>{{i.category_name }}</td>  
+                            <td>{{i.description}}</td> 
+                             <td>  
+                        
+                                <a href="/view/{{ i.id }}">REMOVE</span></a> </td>
+                                
+                        </tr>  
+                    {% endfor %}  
+                </tbody>  
+                 </table>  
+                 </body>
+                 </html>
+                    
+                    
